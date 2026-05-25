@@ -2,25 +2,33 @@
 
 ## Snapshot
 
-alex-1883-test-31 is a minimal Vite-powered web app. It currently serves a single hello page confirming that Vite is running and points developers to `src/main.js` as the starting place for future app work.
+alex-1883-test-31 is a Vite-powered browser clock. It renders the current local time as a responsive `HH:MM:SS` readout, updates on whole-second boundaries, and can be shipped as static files from `dist/`.
 
 ## Current Capabilities
 
 - Browser entry point at `index.html`.
-- JavaScript app bootstrap in `src/main.js`.
-- Basic responsive styling in `src/style.css`.
+- JavaScript app bootstrap in `src/main.js`, with DOM rendering isolated in `src/clockView.js`.
+- Time formatting helpers for zero-padded hours, minutes, seconds, and full `HH:MM:SS` strings.
+- Tick scheduler that aligns updates to the next whole second and exposes `start()` / `stop()`.
+- Responsive light/dark styling in `src/style.css`.
 - Local development server via `npm run dev`.
 - Production build via `npm run build`.
+- Unit tests via `npm test`.
+- Playwright smoke test via `npm run e2e`.
 
 ## Architecture
 
 - Frontend-only Vite project using native ES modules.
 - No application framework is installed yet.
+- Pure time and scheduling modules are kept separate from DOM code.
+- Vite environment variables are documented in `.env.example`; browser-exposed config uses `import.meta.env`.
 - Node.js 20 is the project runtime convention, recorded in `.nvmrc`.
 - npm is the package manager, with `package-lock.json` committed.
+- Production output is static and can be served with Vite preview or any static file server.
 
 ## Conventions
 
 - Keep generated output and dependencies out of Git (`dist/`, `node_modules/`).
-- Add future UI behavior through `src/main.js` and shared styles through `src/style.css` until the app grows enough to justify additional structure.
+- Keep DOM-touching behavior thin and isolated from pure modules.
+- Use Vitest for unit coverage and Playwright for browser smoke coverage.
 - Keep `README.md` focused on setup and build instructions; keep this file as the concise product and architecture snapshot.
