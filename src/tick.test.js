@@ -25,9 +25,7 @@ describe('tick scheduler', () => {
 
     await vi.advanceTimersByTimeAsync(1);
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback.mock.calls[0][0]).toEqual(
-      new Date(2024, 0, 1, 0, 0, 1, 0),
-    );
+    expect(callback.mock.calls[0][0]).toEqual(new Date(2024, 0, 1, 0, 0, 1, 0));
 
     await vi.advanceTimersByTimeAsync(1_000);
     expect(callback).toHaveBeenCalledTimes(2);

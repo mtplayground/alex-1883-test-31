@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run src",
     "e2e": "playwright install chromium && playwright test"
@@ -23,7 +25,11 @@
   },
   "homepage": "https://github.com/mtplayground/alex-1883-test-31#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.60.0",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3",
     "vite": "^8.0.14",
     "vitest": "^4.1.7"
   }
