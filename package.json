@@ -1,0 +1,26 @@
+{
+  "name": "alex-1883-test-31",
+  "version": "1.0.0",
+  "description": "Minimal Vite app for alex-1883-test-31.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtplayground/alex-1883-test-31.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtplayground/alex-1883-test-31/issues"
+  },
+  "homepage": "https://github.com/mtplayground/alex-1883-test-31#readme",
+  "devDependencies": {
+    "vite": "^8.0.14"
+  }
+}
