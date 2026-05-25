@@ -13,6 +13,7 @@ alex-1883-test-31 is a Vite-powered browser clock. It renders the current local 
 - Responsive light/dark styling in `src/style.css`.
 - Local development server via `npm run dev`.
 - Production build via `npm run build`.
+- Sprite deployment start script at `scripts/start-sprite.sh`, which serves the built app with Vite preview on `PORT`/`8080` and keeps preview logs quiet.
 - ESLint checks via `npm run lint`.
 - Prettier formatting via `npm run format`.
 - Unit tests via `npm test`.
@@ -29,10 +30,11 @@ alex-1883-test-31 is a Vite-powered browser clock. It renders the current local 
 - ESLint uses a flat config in `eslint.config.js` with browser, Node, Vitest, and Playwright-aware scopes.
 - Prettier uses `prettier.config.js` for project formatting.
 - Production output is static and can be served with Vite preview or any static file server.
+- Vite preview is configured to allow public Sprite hosts (`*.sprites.app`) for deployed previews.
 
 ## Conventions
 
-- Keep generated output and dependencies out of Git (`dist/`, `node_modules/`).
+- Keep generated output, dependencies, and local deployment artifacts out of Git (`dist/`, `node_modules/`, `.deploy_url`, `.gh_token`, verification screenshots).
 - Keep DOM-touching behavior thin and isolated from pure modules.
 - Use ESLint and Prettier for JavaScript and asset formatting.
 - Use Vitest for unit coverage and Playwright for browser smoke coverage.
