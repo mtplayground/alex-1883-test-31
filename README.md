@@ -15,7 +15,7 @@ cp .env.example .env
 npm run dev
 ```
 
-Open the local URL printed by Vite to view the hello page.
+Open the local URL printed by Vite to view the clock.
 
 ## Environment
 
@@ -27,3 +27,25 @@ Open the local URL printed by Vite to view the hello page.
 ```bash
 npm run build
 ```
+
+The production build is written to `dist/` as static files:
+
+- `dist/index.html`
+- `dist/assets/*`
+
+## Serve The Production Build
+
+After building, serve `dist/` with any static file server. For example:
+
+```bash
+npm run preview
+```
+
+or:
+
+```bash
+npx serve dist
+```
+
+Deploy the contents of `dist/` to any static hosting provider that can serve
+`index.html` and the generated files under `assets/`.
